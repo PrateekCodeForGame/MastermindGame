@@ -1,0 +1,17 @@
+{
+  "name": "Mastermind",
+  "version": "1.0.0",
+  "description": "A sequence guessing game",
+  "main": "index.js",
+  "scripts": {
+    "Mastermind": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Prateek Choudhury",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.5.5",
+    "bootstrap": "^3.3.6",
+    "http-server": "^0.9.0",
+    "jquery": "^2.2.3"
+  }
+}

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Mastermind</title>
+    <!-- Bootstrap -->
+    <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Include css file -->
+    <link href="css/style.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body ng-app="Mastermind" ng-controller="gameController">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p>
+          <button type="button" class="btn btn-lg btn-primary">Start Game</button>
+        </div>
+        <div class="col-md-6">
+          <table class="table">
+            <tr ng-repeat="values in gameValues">
+              <td>
+                <ul class="selected-list">
+                  <li ng-click="placeColor($index, 'choice1')" class="{{values.choice1}}"></li>
+                  <li ng-click="placeColor($index, 'choice2')" class="{{values.choice2}}"></li>
+                  <li ng-click="placeColor($index, 'choice3')" class="{{values.choice3}}"></li>
+                  <li ng-click="placeColor($index, 'choice4')" class="{{values.choice4}}"></li>
+                </ul>
+              </td>
+              <td>
+                <ul class="result-list">
+                  <li class="{{values.result1}}"></li>
+                  <li class="{{values.result2}}"></li>
+                  <li class="{{values.result3}}"></li>
+                  <li class="{{values.result4}}"></li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <button ng-click="pickColor('red')" type="button" class="btn btn-danger">Red</button>
+                <button ng-click="pickColor('blue')" type="button" class="btn btn-primary">Blue</button>
+                <button ng-click="pickColor('yellow')" type="button" class="btn btn-warning">Yellow</button>
+                <button ng-click="pickColor('black')" type="button" class="btn btn-black">Black</button>
+                <button ng-click="pickColor('green')" type="button" class="btn btn-success">Green</button>
+                <button ng-click="pickColor('white')" type="button" class="btn btn-default">White</button>
+              </td>
+              <td>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- Include angular minified file to define our app and use the framework -->
+    <script src="node_modules/angular/angular.min.js"></script>
+    <!-- Include the user javascript files used -->
+    <script src="app.js"></script>
+    <script src="js/controller.js"></script>
+    <script src="js/service.js"></script>
+  </body>
+</html>
