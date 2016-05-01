@@ -4,6 +4,7 @@ controller('gameController', function($scope, gameService) {
     gameService.newGame().then(function(response) {
       $scope.gameValues = response
       $scope.gameValues[0].state = true;
+      $scope.pickedColor = "gray";
 
       $scope.sequence = new Array();
       var colours = ["red", "blue", "yellow", "black", "green", "purple"];
@@ -15,10 +16,14 @@ controller('gameController', function($scope, gameService) {
   };
   init();
 
+  $scope.startNewGame = function() {
+    init();
+  };
+
   $scope.placeColor = function(index, choice) {
     if ($scope.gameValues[index].state == true) {
       $scope.gameValues[index][choice] = $scope.pickedColor;
-    }
+    };
   };
 
   $scope.pickColor = function(color) {
@@ -35,16 +40,16 @@ controller('gameController', function($scope, gameService) {
     $scope.findCorrectPos($scope.gameValues[index].choice3, 2);
     $scope.findCorrectPos($scope.gameValues[index].choice4, 3);
     if ($scope.seq[0] != "done") {
-      $scope.findPosition($scope.gameValues[index].choice1, 0);
+      $scope.findOccurence($scope.gameValues[index].choice1, 0);
     }
     if ($scope.seq[1] != "done") {
-      $scope.findPosition($scope.gameValues[index].choice2, 1);
+      $scope.findOccurence($scope.gameValues[index].choice2, 1);
     }
     if ($scope.seq[2] != "done") {
-      $scope.findPosition($scope.gameValues[index].choice3, 2);
+      $scope.findOccurence($scope.gameValues[index].choice3, 2);
     }
     if ($scope.seq[3] != "done") {
-      $scope.findPosition($scope.gameValues[index].choice4, 3);
+      $scope.findOccurence($scope.gameValues[index].choice4, 3);
     }
     $scope.result.sort().reverse();
     $scope.gameValues[index].result1 = $scope.result[0];
@@ -56,7 +61,7 @@ controller('gameController', function($scope, gameService) {
     console.log($scope.seq, $scope.sequence);
   };
 
-  $scope.findPosition = function(value, index) {
+  $scope.findOccurence = function(value, index) {
     var pos = _.indexOf($scope.seq, value, 0)
     if (pos == -1) {
       $scope.result.push("gray");
