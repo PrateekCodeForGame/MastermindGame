@@ -7,7 +7,7 @@ factory('gameService', function($q) {
     this.choice2 = "gray";
     this.choice3 = "gray";
     this.choice4 = "gray";
-    this.state = "nonactive";
+    this.state = false;
     this.result1 = "gray";
     this.result2 = "gray";
     this.result3 = "gray";

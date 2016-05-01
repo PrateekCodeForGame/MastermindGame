@@ -10,26 +10,27 @@
 .btn-warning {
 }
 
-.selected-list {
-
+.accept-btn {
+	margin-top: 10px;
+	color: black;
 }
 
-.selected-list li, .result-list li{
+.selected-list li, .result-list li {
 	list-style: none;
 	float: left;
 	width: 40px;
 	height: 40px;
-	margin-right: 40px;
+	margin-right: 20px;
 	border-radius: 8px;
 
 }
 
 .result-list {
-	margin-left: -20px;
+	padding: 2px;
 	margin-top: 10px;
 }
 .result-list li {
-	margin-right: 5px;
+	margin: 2px;
 	border-radius: 20px;
 	width: 15px;
 	height: 15px;
@@ -65,5 +66,10 @@
 
 .yellow {
 	background-color: yellow;
+	border:1px solid #DDD;
+}
+
+.purple {
+	background-color: purple;
 	border:1px solid #DDD;
 }
