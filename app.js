@@ -1,4 +1,5 @@
 angular.module('Mastermind', [
 	'Mastermind.controllers',
-	'Mastermind.services'
+	'Mastermind.services',
+	'ui.bootstrap'
 ]);

@@ -1,3 +1,6 @@
+body {
+	background-color: #DCD9D8;
+}
 .container {
 	margin-top: 50px;
 
@@ -55,13 +58,13 @@
 }
 
 .white {
-	background-color: #fff;
+	background-color: #DCD9D8;
 	border:1px solid #DDD;
 }
 
 .black {
 	background-color: black;
-	border:1px solid #DDD;
+	border:1px solid #000;
 }
 
 .yellow {
@@ -71,5 +74,24 @@
 
 .purple {
 	background-color: purple;
-	border:1px solid #DDD;
+}
+.main-content {
+	-webkit-box-shadow: 10px 10px 24px -4px rgba(0,0,0,0.75);
+	-moz-box-shadow: 10px 10px 24px -4px rgba(0,0,0,0.75);
+	box-shadow: 10px 10px 24px -4px rgba(0,0,0,0.75);
+	background-color: #085888;
+	border-radius: 25px;
+}
+
+.side-buttons {
+	padding-top: 100px;
+}
+.btn-side {
+		background-color: #085888;
+}
+.table>tbody>tr {
+	border-top: 1px solid #ddd;
+}
+.table>tbody>tr>td {
+	border-top: none;
 }
